@@ -1,0 +1,224 @@
+Create a map of your surrounding area using vector data model (points, lines and polygons)
+Project  New  Layer  Create Layer  New Shapefile Layer
+
+File name - map.shp  Geometry type - Polygon  If you require you can new field  Name - map1  Click on Add to Fields List  OK
+
+
+Click on pencil  Add feature  Polygon  Now create polygon  Right click to stop  Enter value in id and map1  Now area map is created.
+
+
+•Layer  Create Layer  New Shapefile Layer
+
+
+
+File name - road.shp  Geometry type – LineString  If you require you can new field  Name - road  Click on Add to Fields List  OK
+
+
+Click on pencil  Add feature  LineString  Now create LineString
+ Right click to stop  Enter value in id  Now roads are created.
+Layer  Create Layer  New Shapefile Layer
+
+File name - points.shp  Geometry type – Point  If you require you can new field  Name - points  Click on Add to Fields List  OK
+
+
+Click on pencil  Add feature  Point  Now create Point  Right click to stop  Enter value in id  Now points are created.
+
+
+Create Geo-relational Data Model for your map
+Project  New  Add Layer  Add Vector Layer  Vector Dataset(s)
+ Browse  Select (alaska.shp)file  Add  (in the same way select airports.shp) Add
+
+
+
+
+
+
+
+
+
+
+
+Right click on airports(layer)  Click on Open Attribute Table 
+Add New field  Enter Name, Comment, Length  Click OK
+
+
+
+
+
+
+
+Click on Open field calculator  Click on Update existing field  Select ELEV  Under Expression Type “ELEV”=78.0000  Click OK
+
+
+
+
+
+Practical 3: Fire Spatial Queries(contains, within, touches, overlap ,intersect, crosses and is disjoint)
+Project  New  Layer  Add Layer  Add Vector Layer  Vector Dataset(s)  Browse  Select Maha_Tehsil.shp  Add
+
+
+
+
+
+Query 1  Find out the road segments in Maharashtra where road cross over the river.
+Add road_maha.shp and River_Maha.shp to execute query 1.
+Click Select by Location  Select features from (Browse)  select road_maha  Select cross  By comparing (Browse)  select River_Maha  Run
+
+
+
+
+
+Query 2  Find out the river channels that are not flowing through Ahmednagar District.
+Right click on Maha_Tehsil  Filter  Query Builder  with the help of Fields, Values, Operators(add “Name_2” = ‘Ahmednagar’)  Test
+ OK
+
+
+
+Query 3  Find out the public places that are within Greater Mumbai.
+Add public_place_maha.shp to execute query 1.
+Right click on Maha_Tehsil  Filter  Query Builder  with the help of Fields, Values, Operators(add “Name_2” = ‘Greater Bombay’)  Test  OK
+
+
+Click Select by Location  Select features from (Browse)  select public_place_maha  Select intersect  By comparing (Browse)  select Maha_Tehsil  Run
+
+
+Practical 4: Fire Queries using Query Builder. To analyze data using analysis tools
+Project  New  Layer  Add Layer  Add Vector Layer  Add regions.shp
+
+
+
+
+Right click on regions  Properties  Click on Query Builder  with the help of Fields, Values, Operators(add “Name_1” = ‘Alaska’ and “Type_2” = ‘City And Borough’)  Test  OK
+
+
+
+
+
+
+
+
+Practical 5: Perform Vector Classification
+Project  New  Layer  Add Layer  Add Vector Layer  Add Maha_Tehsil.shp
+
+
+
+
+
+
+
+
+
+Categorized:
+Right click on Maha_Tehsil(layer)  Symbology  Categorized 
+Value - Name_2  Color ramp – Blues  Classify  OK
+
+
+
+
+Graduated:
+Right click on Maha_Tehsil(layer)  Symbology  Graduated 
+Value - Shape_Leng  Color ramp - Reds  Classify  OK
+
+
+
+Rule-Based:
+Right click on Maha_Tehsil(layer)  Symbology  Rule-based  Edit Rule click (Ꜫ) symbol  add (“Name_2” = ‘Aurangabad’) under Expression  OK
+
+
+
+
+
+
+Practical 6: Map Composer
+Project  New  Layer  Add Layer  Add Vector Layer  Add alaska.shp
+
+
+
+Project  New Print Layout  Give Name (Alaska Map)  OK 
+Add Item  Add Map
+
+
+
+
+Add Item  Add Label  Item Properties  Choose Page, Height, Width  OK  Give any name(Alaska Map)  Add Item  Add North Arrow  Add Scale Bar
+
+
+
+
+
+
+
+
+
+
+Practical 7: Raster Data Analysis
+Project  New  Layer  Add Layer  Add Raster Layer  Browse (select terrain_1_lg)  Add
+
+
+
+
+
+
+Terrain Ruggedness Index(TRI):
+Raster  Analysis  Terrain Ruggedness Index(TRI)  Run  OK
+
+
+
+
+
+Slope:
+Raster  Analysis  Slope  Run  OK
+
+
+
+
+
+
+
+
+
+Aspect:
+Raster  Analysis  Aspect  Run  OK
+
+
+
+
+
+
+
+Practical 8: Importing CSV File, Using Plugins
+Download CSV File  Layer  Add Layer  Add Delimited Text Layer  Browse (Sample.csv)  Click on Custom Delimiters  Click on Project CRS : EPSG:4326-WGS 84  Click on Use spatial index  Add
+
+
+Plugins  Manage and Install Plugins  Search QuickMapServices 
+Install  Web  QuickMapServices  OSM  OSM Standard
+
+
+
+
+
+Practical 9: Searching and downloading Open Street Map.
+Plugins  Install QuickOSM  Vector  QuickOSM  QuickOSM
+ Quick query  Select amenity in key and pub in value  Set Or in the second row  Select amenity in key and bar in value  Select Node and Points in Advanced
+
+
+
+
+Right click on Layers  Properties  Symbology  Select Categorized  Value - amenity  Classify  OK
+
+
+
+
+Practical 10: Digitizing In GIS.
+Project  New  Layer  Add Layer  Add Raster Layer  Select the screenshot image(dharavi) you have saved  Add
+
+
+
+
+
+Layer  Create Layer  New Shapefile Layer  Browse the screenshot file you have saved  Geometry type – Polygon  If required add new field  Name(map)  Add to Fields List  OK
+
+
+Construct the area map by using polygons, lines and points.
+
+
